@@ -33,12 +33,10 @@ router.get('/profile' , isLogedIn, async (req, res) => {
                 users[i].isBanned = true
             }
         }
-        console.log(users[1])
         res.render('profileAdmin',{
             users,
         })
     } else {
-        console.log(user)
         res.render('profile')
     }
     
