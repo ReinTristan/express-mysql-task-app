@@ -1,0 +1,28 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each tasks}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3 class="card-title text-uppercase">
+                        {{task}}
+                    </h3>
+                    <p class="m-2">{{description}}</p>
+                    <p class="m-2">Entrega {{timeago beforeHour}}</p>
+                    <p class="m-2">Prioridad {{priority}}</p>
+                    <p>Creada {{timeago created_at}}</p>
+                    <a href="/tasks/delete/{{id}}" class="btn btn-danger">Delete tasks</a>
+                    <a href="/tasks/edit/{{id}}" class="btn btn-secondary">Edit tasks</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>There are not tasks saved yet</p>
+                    <a href="/tasks/add">Create one</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

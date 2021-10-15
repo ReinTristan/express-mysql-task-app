@@ -1,0 +1,32 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body ">
+                    <form action="/tasks/add" method="POST">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="task" placeholder="Nombre de la tarea" autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="description" rows="2" placeholder="Descripción"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <input type="datetime-local" class="form-control" name="beforeHour" placeholder="Fecha De entrega">
+                        </div>
+                        <div class="mb-3">
+                            <input list="priorities" class="form-control" name="priority" placeholder="Prioridad">
+                            <datalist id="priorities" >
+                                <option value="Alta"></option>
+                                <option value="Normal"></option>
+                                <option value="Baja"></option>
+                            </datalist>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

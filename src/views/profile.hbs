@@ -1,0 +1,18 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Welcome {{user.fullname}}</h3>
+                    <h4>{{user.username}}</h4>
+                    {{#if user.isBanned}}
+                        <p>Your account is banned, you cannot add task anymore</p>
+                    {{else}}
+                        <a href="/tasks" class="btn btn-primary m-4">Save your tasks</a>
+                    {{/if}}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

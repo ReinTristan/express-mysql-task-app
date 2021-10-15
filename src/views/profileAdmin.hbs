@@ -1,0 +1,56 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Welcome {{user.fullname}}</h3>
+                    <h4>{{user.username}}</h4>
+                    <a href="/links" class="btn btn-primary m-4">Save your links Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-8 mx-auto">
+            <table class="table table-bordered table-hover bg-dark">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>User</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Ban</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each users as |user1|}}
+                        <tr>
+                            <td>{{user1.id}}</td>
+                            <td>{{user1.username}}</td>
+                            <td>{{user1.fullname}}</td>
+                            <td>{{user1.type}}</td>
+                            <td>       
+                                {{#if user1.isBanned }}
+                                    <form action="/unban/{{user1.id}}" method="post">
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-success" >Unban</button>
+                                        </div>
+                                        
+                                    </form>    
+                            
+                                {{else}}
+                                    <form action="/ban/{{user1.id}}" method="post">
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-danger">Ban</button>
+                                        </div>
+                                    </form>
+                                {{/if}}      
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+</div>
