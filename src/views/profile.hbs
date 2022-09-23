@@ -5,6 +5,7 @@
                 <div class="card-body">
                     <h3>Welcome {{user.fullname}}</h3>
                     <h4>{{user.username}}</h4>
+                    {{!-- <img src="{{user.image}}" alt=""> --}}
                     {{#if user.isBanned}}
                         <p>Your account is banned, you cannot add task anymore</p>
                     {{else}}

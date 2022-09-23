@@ -5,7 +5,6 @@ const { isLogedIn, isBanned } = require('../lib/auth')
 
 router.get('/', isLogedIn, isBanned, async (req, res) => {
     const tasks = await pool.query('SELECT * FROM task WHERE userId = ? ', [req.user.id])
-
     res.render('tasks/list', {
         tasks
     })
@@ -24,6 +23,7 @@ router.post('/add', isLogedIn, isBanned, async (req, res) => {
         userId: req.user.id
     }
     await pool.query('INSERT INTO task SET ?', [newTask])
+
     req.flash('success', 'Task saved successfully')
     res.redirect('/tasks')
 })
