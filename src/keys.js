@@ -5,5 +5,5 @@ module.exports = {
 		password: 'ReinMysql$93',
 		database: 'proyectoWeb',
 	},
-	secretDb: 'reinmsyqlnodesession',
+	secretDb: 'aphemsyqlnodesession',
 }
